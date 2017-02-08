@@ -1,0 +1,38 @@
+<div class="datagrid">
+  <div class="searching">
+    <input type="text" [(ngModel)]="searchData" placeholder="Masukan kata pencarian...">
+    : {{ searchData }}
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>No</strong></th>
+        <th><strong>Name</strong></th>
+        <th><strong>Email</strong></th>
+        <th><strong>Company ID</strong></th>
+        <th><strong>Role ID</strong></th>
+        <th><strong>Created At</strong></th>
+        <th><strong>Updated At</strong></th>
+        <th><strong>Action</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{ user.attributes.name }}</td>
+        <td>{{ user.attributes.email }}</td>
+        <td>{{ user.attributes.company_id }}</td>
+        <td>{{ user.attributes.role_id }}</td>
+        <td>{{ user.attributes.created_at | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ user.attributes.updated_at | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <a [routerLink]="['/show-user', user.id]">Detail</a>
+          &nbsp;|&nbsp;
+          <a [routerLink]="['/edit-user', user.id]">Edit</a>
+          &nbsp;|&nbsp;
+          <a (click)="onDelete(user)" title="Delete User">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

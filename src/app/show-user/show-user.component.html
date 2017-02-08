@@ -1,0 +1,25 @@
+<div *ngIf="user">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>:</td>
+      <td>{{ user.attributes.name }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>:</td>
+      <td>{{ user.attributes.email }}</td>
+    </tr>
+    <tr>
+      <td>Company ID</td>
+      <td>:</td>
+      <td>{{ user.attributes.company_id }}</td>
+    </tr>
+    <tr>
+      <td>Role ID</td>
+      <td>:</td>
+      <td>{{ user.attributes.role_id }}</td>
+    </tr>
+  </table>
+  <button (click)="goBack()">Back</button>
+</div>

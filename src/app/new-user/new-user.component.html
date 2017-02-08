@@ -1,0 +1,34 @@
+<form [formGroup]="userForm">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>:</td>
+      <td><input formControlName="name" type="text" placeholder="Name"></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>:</td>
+      <td><input formControlName="email" type="email" placeholder="Email"></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>:</td>
+      <td><input formControlName="password_digest" type="password" placeholder="Your password"></td>
+    </tr>
+    <tr>
+      <td>Company ID</td>
+      <td>:</td>
+      <td><input formControlName="company_id" type="number" placeholder="Company ID"></td>
+    </tr>
+    <tr>
+      <td>Role ID</td>
+      <td>:</td>
+      <td><input formControlName="role_id" type="number" placeholder="Role ID"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><button type="button" (click)="saveUser()">Submit</button></td>
+    </tr>
+  </table>
+</form>

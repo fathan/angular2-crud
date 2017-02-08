@@ -1,0 +1,40 @@
+<div *ngIf="getuser">
+  <form [formGroup]="userForm">
+    <input formControlName="id" type="hidden" [(ngModel)]="getuser.id">
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>:</td>
+        <td><input formControlName="name" [(ngModel)]="getuser.attributes.name" type="text" placeholder="Name"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>:</td>
+        <td><input formControlName="email" [(ngModel)]="getuser.attributes.email" type="email" placeholder="Email"></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>:</td>
+        <td><input formControlName="password_digest" [(ngModel)]="getuser.attributes.password_digest" type="password" placeholder="Your password"></td>
+      </tr>
+      <tr>
+        <td>Company ID</td>
+        <td>:</td>
+        <td><input formControlName="company_id" [(ngModel)]="getuser.attributes.company_id" type="number" placeholder="Company ID"></td>
+      </tr>
+      <tr>
+        <td>Role ID</td>
+        <td>:</td>
+        <td><input formControlName="role_id" [(ngModel)]="getuser.attributes.role_id" type="number" placeholder="Role ID"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+          <button type="button" (click)="updateUser()">Submit</button>
+          <button type="button" (click)="goBack()">Back</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
